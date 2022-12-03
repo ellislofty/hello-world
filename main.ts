@@ -98,3 +98,6 @@ game.onUpdateInterval(2000, function () {
         `, mySprite2, 0, 100)
     mySprite2.setPosition(randint(0, scene.screenWidth()), 5)
 })
+forever(function () {
+    music.playMelody("G E F G D C E A ", 120)
+})
