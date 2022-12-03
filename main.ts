@@ -59,7 +59,7 @@ mySprite = sprites.create(img`
 mySprite.setPosition(70, 120)
 controller.moveSprite(mySprite, 100, 0)
 mySprite.setStayInScreen(true)
-game.onUpdateInterval(5000, function () {
+game.onUpdateInterval(2000, function () {
     mySprite2 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -96,5 +96,5 @@ game.onUpdateInterval(5000, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, mySprite2, 0, 100)
-    mySprite2.setPosition(70, 0)
+    mySprite2.setPosition(randint(0, scene.screenWidth()), 5)
 })
