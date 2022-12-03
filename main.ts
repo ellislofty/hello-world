@@ -2,7 +2,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`myImage`, mySprite, 0, -100)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    mySprite2.destroy()
+    mySprite2.destroy(effects.fire, 200)
 })
 let projectile2: Sprite = null
 let mySprite2: Sprite = null
@@ -96,5 +96,5 @@ game.onUpdateInterval(5000, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, mySprite2, 0, 100)
-    mySprite2.setPosition(70, 0)
+    mySprite2.setPosition(randint(0, scene.screenWidth()), 10)
 })
