@@ -1,3 +1,26 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(assets.image`myImage`, mySprite, 0, -100)
+})
+let projectile: Sprite = null
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
+    ....ffffff.........ccc..
+    ....ff22ccf.......cc4f..
+    .....ffccccfff...cc44f..
+    ....cc24442222cccc442f..
+    ...c9b4422222222cc422f..
+    ..c999b2222222222222fc..
+    .c2b99111b222222222c22c.
+    c222b111992222ccccccc22f
+    f222222222222c222ccfffff
+    .f2222222222442222f.....
+    ..ff2222222cf442222f....
+    ....ffffffffff442222c...
+    .........f2cfffc2222c...
+    .........fcc2ffffffff...
+    ..........fc2ffff.......
+    ...........fffff........
+    `, SpriteKind.Player)
 game.setDialogTextColor(9)
 game.setDialogFrame(img`
     ..bb9bb99bb99bb99bbbbb..
@@ -28,3 +51,5 @@ game.setDialogFrame(img`
 game.splash("Space Hero")
 game.showLongText("Destroy the UFOs and save The Universe", DialogLayout.Bottom)
 effects.starField.startScreenEffect()
+controller.moveSprite(mySprite)
+mySprite.setStayInScreen(true)
