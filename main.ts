@@ -1,8 +1,10 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`myImage`, mySprite, 0, -100)
+    music.pewPew.play()
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     mySprite2.destroy(effects.fire, 200)
+    info.changeScoreBy(1)
 })
 let projectile2: Sprite = null
 let mySprite2: Sprite = null
@@ -59,7 +61,8 @@ mySprite = sprites.create(img`
 mySprite.setPosition(70, 120)
 controller.moveSprite(mySprite, 100, 0)
 mySprite.setStayInScreen(true)
-game.onUpdateInterval(5000, function () {
+info.setScore(0)
+game.onUpdateInterval(2000, function () {
     mySprite2 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
